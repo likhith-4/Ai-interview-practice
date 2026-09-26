@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AI Interview Practice</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <nav>
+
+            <a class="brand" href="/">
+                AI Interview<span>Pro</span>
+            </a>
+
+            <a href="/history">
+                History
+            </a>
+
+        </nav>
+
+
+        <section class="hero">
+
+            <div>
+
+                <p class="eyebrow">
+                    SMART INTERVIEW PRACTICE
+                </p>
+
+                <h1>
+                    Practice interviews.
+                    <br>
+                    <span>Improve every answer.</span>
+                </h1>
+
+                <p class="lead">
+                    Build confidence with role-based questions,
+                    instant scoring and actionable feedback.
+                </p>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="orb">
+                    AI
+                </div>
+
+                <strong>
+                    Instant evaluation
+                </strong>
+
+                <small>
+                    Keywords + semantic similarity + answer structure
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <section class="panel">
+
+            <h2>
+                Start your interview
+            </h2>
+
+            <p class="muted">
+                Choose a role and difficulty level.
+            </p>
+
+
+            <form action="/start" method="post" class="form-grid">
+
+                <label>
+                    Role
+
+                    <select name="role" required>
+
+                        {% for role in roles %}
+
+                        <option>
+                            {{ role }}
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Difficulty
+
+                    <select name="difficulty" required>
+
+                        {% for d in difficulties %}
+
+                        <option>
+                            {{ d }}
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </label>
+
+
+                <button class="primary" type="submit">
+                    Start Interview →
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="features">
+
+            <div>
+
+                <b>01</b>
+
+                <h3>
+                    Role-based
+                </h3>
+
+                <p>
+                    Practice software, AI/ML, data and HR questions.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <b>02</b>
+
+                <h3>
+                    Instant score
+                </h3>
+
+                <p>
+                    Get a score from 0–100 for every answer.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <b>03</b>
+
+                <h3>
+                    Track progress
+                </h3>
+
+                <p>
+                    Review your latest interview history.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

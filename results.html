@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Results — AI Interview Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Navigation -->
+        <nav>
+            <a class="brand" href="/">
+                AI Interview<span>Pro</span>
+            </a>
+
+            <a href="/history">History</a>
+        </nav>
+
+
+        <!-- Result Hero Section -->
+        <section class="result-hero">
+
+            <p class="eyebrow">
+                {{ role }} · {{ difficulty }}
+            </p>
+
+            <h1>
+                Interview complete.
+            </h1>
+
+            <!-- Overall Score -->
+            <div class="score-ring">
+                <strong>{{ overall }}</strong>
+                <small>/ 100</small>
+            </div>
+
+            <p>
+                You answered {{ answered }} of {{ total }} questions.
+            </p>
+
+            <!-- Practice Again Button -->
+            <a class="primary inline" href="/">
+                Practice Again
+            </a>
+
+        </section>
+
+
+        <!-- Answer Review -->
+        <h2 class="section-title">
+            Answer review
+        </h2>
+
+
+        <!-- Results Loop -->
+        {% for r in results %}
+
+        <article class="review">
+
+            <div class="review-top">
+
+                <h3>
+                    {{ loop.index }}. {{ r.question }}
+                </h3>
+
+                <span class="score">
+                    {{ r.score }}/100
+                </span>
+
+            </div>
+
+
+            <!-- User Answer -->
+            {% if r.answer %}
+
+            <p class="answer">
+                <b>Your answer:</b>
+                {{ r.answer }}
+            </p>
+
+            {% else %}
+
+            <p class="answer empty">
+                No answer provided.
+            </p>
+
+            {% endif %}
+
+
+            <!-- Feedback -->
+            <p class="feedback">
+                <b>Feedback:</b>
+                {{ r.feedback }}
+            </p>
+
+        </article>
+
+        {% endfor %}
+
+    </main>
+
+</body>
+
+</html>

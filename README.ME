@@ -1,0 +1,75 @@
+# AI Interview Coach
+
+A beginner-friendly AI-assisted interview practice website built with Flask, SQLite and scikit-learn.
+
+## Features
+
+- Choose a job role and difficulty
+- Practice multiple interview questions
+- AI-assisted answer scoring
+- Keyword coverage analysis
+- TF-IDF semantic similarity
+- Instant feedback
+- Local interview history
+- Responsive website UI
+
+## 1. Install Python
+
+Use Python 3.11+.
+
+## 2. Create a virtual environment
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### macOS/Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+## 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Run
+
+```bash
+python app.py
+```
+
+Open:
+
+http://127.0.0.1:5000
+
+## How the scoring works
+
+The first version does not require a paid AI API.
+
+Each answer is scored using:
+1. Important keyword coverage
+2. TF-IDF cosine similarity against a reference answer
+3. Basic answer completeness/length
+
+This makes the project fully runnable locally.
+
+## Important
+
+This is an educational prototype, not a professional hiring assessment system. The score is an automated practice signal and should not be treated as an objective evaluation of a candidate.
+
+## Future upgrades
+
+- Voice interview using browser speech recognition
+- Resume upload
+- Personalized questions from a resume
+- LLM-based feedback
+- User accounts
+- PostgreSQL
+- Online deployment

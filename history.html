@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>History — AI Interview Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <nav>
+            <a class="brand" href="/">
+                AI Interview<span>Pro</span>
+            </a>
+
+            <a href="/history">
+                History
+            </a>
+        </nav>
+
+
+        <section class="page-head">
+
+            <p class="eyebrow">
+                PROGRESS
+            </p>
+
+            <h1>
+                Interview history
+            </h1>
+
+            <p class="lead">
+                Your latest 20 completed interviews.
+            </p>
+
+        </section>
+
+
+        {% if interviews %}
+
+        <div class="history-list">
+
+            {% for row in interviews %}
+
+            <div class="history-row">
+
+                <div>
+                    <strong>
+                        {{ row['role'] }}
+                    </strong>
+
+                    <small>
+                        {{ row['difficulty'] }} · {{ row['created_at'] }}
+                    </small>
+                </div>
+
+
+                <div class="history-score">
+                    {{ row['score'] }}
+
+                    <small>
+                        /100
+                    </small>
+                </div>
+
+
+                <div class="answered">
+                    {{ row['answered'] }} answered
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <div class="panel empty-state">
+
+            <h2>
+                No interviews yet
+            </h2>
+
+            <p>
+                Complete your first interview to see it here.
+            </p>
+
+            <a class="primary inline" href="/">
+                Start Interview
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </main>
+
+</body>
+
+</html>

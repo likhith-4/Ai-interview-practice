@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Interview — AI Interview Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <nav>
+
+            <a class="brand" href="/">
+                AI Interview<span>Pro</span>
+            </a>
+
+            <a href="/history">
+                History
+            </a>
+
+        </nav>
+
+
+        <div class="interview-head">
+
+            <div>
+
+                <p class="eyebrow">
+                    {{ role }} · {{ difficulty }}
+                </p>
+
+                <h1>
+                    Your interview
+                </h1>
+
+            </div>
+
+
+            <div class="progress-label">
+
+                <span id="answered">
+                    0
+                </span>
+
+                /{{ total }} answered
+
+            </div>
+
+        </div>
+
+
+        <form action="/submit"
+              method="post"
+              id="interviewForm">
+
+            <input type="hidden"
+                   name="role"
+                   value="{{ role }}">
+
+            <input type="hidden"
+                   name="difficulty"
+                   value="{{ difficulty }}">
+
+
+            {% for q in questions %}
+
+            <article class="question-card">
+
+                <div class="qtop">
+
+                    <span class="qnum">
+                        0{{ loop.index }}
+                    </span>
+
+                    <span>
+                        Question {{ loop.index }} of {{ total }}
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    {{ q.question }}
+                </h2>
+
+
+                <textarea
+                    name="answer_{{ q.id }}"
+                    placeholder="Type your answer here..."
+                    rows="6"></textarea>
+
+
+                <input type="hidden"
+                       name="question_id"
+                       value="{{ q.id }}">
+
+            </article>
+
+            {% endfor %}
+
+
+            <button class="primary submit-btn"
+                    type="submit">
+
+                Submit Interview →
+
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <script>
+
+        const boxes = [
+            ...document.querySelectorAll("textarea")
+        ];
+
+        const counter =
+            document.getElementById("answered");
+
+
+        boxes.forEach(
+            b => b.addEventListener(
+                "input",
+                () => {
+
+                    counter.textContent =
+                        boxes.filter(
+                            x => x.value.trim()
+                        ).length;
+
+                }
+            )
+        );
+
+    </script>
+
+</body>
+
+</html>

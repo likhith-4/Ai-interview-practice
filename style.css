@@ -1,0 +1,422 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f7fb;
+    color: #182033;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1080px, 92%);
+    margin: auto;
+    padding-bottom: 60px;
+}
+
+nav {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > a:last-child {
+    font-weight: 700;
+    color: #687089;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.7px;
+}
+
+.brand span {
+    color: #5b5ce2;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 28px;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: #5b5ce2;
+}
+
+.hero h1,
+.page-head h1,
+.result-hero h1 {
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #5b5ce2;
+}
+
+.lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #687089;
+    max-width: 650px;
+}
+
+.hero-card {
+    background: #171a2b;
+    color: white;
+    border-radius: 28px;
+    padding: 34px;
+    min-height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 20px 50px #171a2b20;
+}
+
+.orb {
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    background: #5b5ce2;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: auto;
+}
+
+.hero-card small {
+    color: #aeb4c8;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.panel,
+.question-card,
+.review,
+.history-list {
+    background: white;
+    border: 1px solid #e8eaf1;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px #1a204010;
+}
+
+.panel {
+    padding: 30px;
+}
+
+.panel h2 {
+    margin: 0 0 5px;
+}
+
+.muted {
+    color: #7a8195;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+    margin-top: 25px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+select,
+textarea {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    border: 1px solid #dfe2eb;
+    border-radius: 14px;
+    background: #fafbfe;
+    padding: 14px;
+    font: inherit;
+    color: inherit;
+    outline: none;
+}
+
+select:focus,
+textarea:focus {
+    border-color: #5b5ce2;
+    box-shadow: 0 0 0 3px #5b5ce215;
+}
+
+.primary {
+    border: 0;
+    border-radius: 14px;
+    background: #5b5ce2;
+    color: white;
+    padding: 15px 22px;
+    font-weight: 900;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.features div {
+    padding: 24px;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #e8eaf1;
+}
+
+.features b {
+    color: #5b5ce2;
+}
+
+.features h3 {
+    margin: 10px 0 5px;
+}
+
+.features p {
+    color: #737b90;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.interview-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 40px 0 25px;
+}
+
+.interview-head h1 {
+    margin: 5px 0;
+    font-size: 46px;
+    letter-spacing: -2px;
+}
+
+.progress-label {
+    font-weight: 900;
+}
+
+.question-card {
+    padding: 26px;
+    margin: 18px 0;
+}
+
+.qtop {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #7a8195;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.qnum {
+    color: #5b5ce2;
+}
+
+.question-card h2 {
+    font-size: 22px;
+    margin: 18px 0;
+}
+
+.submit-btn {
+    margin-top: 10px;
+}
+
+.result-hero {
+    text-align: center;
+    padding: 55px 0;
+}
+
+.result-hero h1 {
+    font-size: 54px;
+}
+
+.score-ring {
+    margin: 28px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #5b5ce2;
+    color: white;
+    display: grid;
+    place-content: center;
+}
+
+.score-ring strong {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.score-ring small {
+    opacity: 0.8;
+}
+
+.inline {
+    margin-top: 18px;
+}
+
+.section-title {
+    margin: 15px 0;
+}
+
+.review {
+    padding: 25px;
+    margin: 15px 0;
+}
+
+.review-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.review-top h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.score,
+.history-score {
+    font-weight: 900;
+    color: #5b5ce2;
+    white-space: nowrap;
+}
+
+.answer {
+    color: #4c5468;
+    line-height: 1.6;
+}
+
+.answer.empty {
+    color: #a0a5b3;
+}
+
+.feedback {
+    background: #f3f4ff;
+    padding: 15px;
+    border-radius: 14px;
+    line-height: 1.5;
+}
+
+.page-head {
+    padding: 55px 0 30px;
+}
+
+.page-head h1 {
+    font-size: 54px;
+}
+
+.history-list {
+    overflow: hidden;
+}
+
+.history-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 25px;
+    align-items: center;
+    padding: 22px 25px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.history-row:last-child {
+    border-bottom: 0;
+}
+
+.history-row small {
+    display: block;
+    color: #858ca0;
+    margin-top: 5px;
+}
+
+.history-score {
+    font-size: 25px;
+}
+
+.answered {
+    color: #737b90;
+    font-size: 13px;
+}
+
+.empty-state {
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 35px 0;
+    }
+
+    .hero-card {
+        min-height: 190px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .interview-head {
+        align-items: start;
+        gap: 20px;
+    }
+
+    .interview-head h1,
+    .page-head h1 {
+        font-size: 38px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .result-hero h1 {
+        font-size: 40px;
+    }
+
+    .review-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .history-row {
+        grid-template-columns: 1fr auto;
+    }
+
+    .answered {
+        grid-column: 1 / -1;
+    }
+
+    .panel {
+        padding: 22px;
+    }
+}
